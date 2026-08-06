@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashwani Singhal - Resume</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', Arial, Helvetica, sans-serif;
+            font-size: 10.5px;
+            line-height: 1.4;
+            color: #1a1a1a;
+            background: #f0f0f0;
+        }
+
+        a {
+            color: #0563C1;
+            text-decoration: underline;
+        }
+
+        a:hover {
+            color: #034182;
+        }
+
+        .resume {
+            width: 8.5in;
+            min-height: 11in;
+            max-height: 11in;
+            margin: 20px auto;
+            padding: 0.4in 0.5in;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 7px;
+            padding-bottom: 7px;
+            border-bottom: 1.5px solid #2d2d2d;
+        }
+
+        .header h1 {
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #1a1a1a;
+            margin-bottom: 3px;
+        }
+
+        .contact-line {
+            font-size: 9.5px;
+            color: #444;
+            margin-bottom: 2px;
+        }
+
+        .contact-line a {
+            color: #0563C1;
+            text-decoration: none;
+        }
+
+        .contact-line a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-line .sep {
+            margin: 0 4px;
+            color: #999;
+        }
+
+        /* Section */
+        .section {
+            margin-bottom: 6px;
+        }
+
+        .section-title {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #1a1a1a;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 2px;
+            margin-bottom: 4px;
+        }
+
+        /* Summary */
+        .summary {
+            font-size: 10px;
+            color: #333;
+            line-height: 1.45;
+        }
+
+        /* Education */
+        .edu-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .edu-school {
+            font-weight: 600;
+            font-size: 10.5px;
+        }
+
+        .edu-loc {
+            font-size: 9.5px;
+            color: #555;
+        }
+
+        .edu-deg {
+            display: flex;
+            justify-content: space-between;
+            font-size: 10px;
+            color: #333;
+        }
+
+        .edu-cw {
+            font-size: 9.5px;
+            color: #444;
+            margin-top: 1px;
+        }
+
+        .edu-cw strong {
+            font-weight: 600;
+        }
+
+        /* Experience */
+        .exp-item {
+            margin-bottom: 5px;
+        }
+
+        .exp-hdr {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .exp-title {
+            font-weight: 600;
+            font-size: 10.5px;
+        }
+
+        .exp-co {
+            font-weight: 500;
+            color: #333;
+        }
+
+        .exp-dt {
+            font-size: 9.5px;
+            color: #555;
+            white-space: nowrap;
+        }
+
+        ul.bl {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 2px;
+        }
+
+        ul.bl li {
+            font-size: 10px;
+            color: #333;
+            padding-left: 12px;
+            position: relative;
+            margin-bottom: 1px;
+            line-height: 1.4;
+        }
+
+        ul.bl li::before {
+            content: "\2022";
+            position: absolute;
+            left: 0;
+            color: #555;
+        }
+
+        /* Inline repo link */
+        .rlink {
+            font-size: 9px;
+        }
+
+        .rlink a {
+            color: #0563C1;
+            text-decoration: none;
+        }
+
+        .rlink a:hover {
+            text-decoration: underline;
+        }
+
+        /* Projects */
+        .proj-item {
+            margin-bottom: 4px;
+        }
+
+        .proj-hdr {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .proj-name {
+            font-weight: 600;
+            font-size: 10.5px;
+        }
+
+        .proj-lnk {
+            font-size: 9px;
+        }
+
+        .proj-lnk a {
+            color: #0563C1;
+            text-decoration: none;
+        }
+
+        .proj-lnk a:hover {
+            text-decoration: underline;
+        }
+
+        /* Skills */
+        .sk {
+            font-size: 10px;
+            color: #333;
+            margin-bottom: 1px;
+        }
+
+        .sk strong {
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        /* Certifications */
+        ul.certs {
+            font-size: 9.5px;
+            color: #333;
+            list-style: none;
+        }
+
+        ul.certs li {
+            padding-left: 12px;
+            position: relative;
+            margin-bottom: 1px;
+        }
+
+        ul.certs li::before {
+            content: "\2022";
+            position: absolute;
+            left: 0;
+            color: #555;
+        }
+
+        /* Print */
+        @media print {
+            body { background: white; }
+            .resume {
+                margin: 0;
+                padding: 0.35in 0.45in;
+                box-shadow: none;
+                width: 100%;
+                min-height: auto;
+                max-height: none;
+            }
+            a { color: #0563C1 !important; }
+            @page { size: letter; margin: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume">
+
+        <!-- HEADER -->
+        <div class="header">
+            <h1>ASHWANI SINGHAL</h1>
+            <div class="contact-line">
+                Hapur, Uttar Pradesh, India <span class="sep">|</span>
+                +91 74518 34707 <span class="sep">|</span>
+                ashwani.singhal0920@gmail.com
+            </div>
+            <div class="contact-line">
+                <a href="https://linkedin.com/in/ashwani-singhal-7032a0378">LinkedIn: linkedin.com/in/ashwani-singhal-7032a0378</a>
+                <span class="sep">|</span>
+                <a href="https://github.com/Ashwani899">GitHub: github.com/Ashwani899</a>
+                <span class="sep">|</span>
+                <a href="https://leetcode.com/u/n3o8ZRTwiN">LeetCode: leetcode.com/u/n3o8ZRTwiN</a>
+            </div>
+        </div>
+
+        <!-- PROFESSIONAL SUMMARY -->
+        <div class="section">
+            <div class="section-title">Professional Summary</div>
+            <p class="summary">
+                Motivated Computer Science Engineering student at Jaypee University of Information Technology with hands-on experience in software development, DevOps, and cloud computing. Proficient in Java, Python, JavaScript, and C/C++ with demonstrated ability to build and deploy full-stack web applications and end-to-end CI/CD pipelines. Completed a DevOps internship delivering 4 production-grade projects spanning containerization, build automation, and cloud deployment. Passionate about solving complex problems through clean, scalable code.
+            </p>
+        </div>
+
+        <!-- EDUCATION -->
+        <div class="section">
+            <div class="section-title">Education</div>
+            <div class="edu-row">
+                <span class="edu-school">Jaypee University of Information Technology (JUIT)</span>
+                <span class="edu-loc">Waknaghat, Solan, Himachal Pradesh</span>
+            </div>
+            <div class="edu-deg">
+                <span>B.Tech, Computer Science Engineering | CGPA: 7.26/10</span>
+                <span class="exp-dt">2025 – 2029</span>
+            </div>
+            <div class="edu-cw">
+                <strong>Relevant Coursework:</strong> Data Structures &amp; Algorithms, Object-Oriented Programming, Database Management Systems, Operating Systems, Computer Networks
+            </div>
+        </div>
+
+        <!-- EXPERIENCE -->
+        <div class="section">
+            <div class="section-title">Experience</div>
+
+            <!-- DevOps Intern -->
+            <div class="exp-item">
+                <div class="exp-hdr">
+                    <span><span class="exp-title">DevOps Intern</span> <span class="exp-co">| CodeAlpha</span></span>
+                    <span class="exp-dt">Jun 2026 – Jul 2026</span>
+                </div>
+                <ul class="bl">
+                    <li>Delivered 4 end-to-end DevOps projects encompassing CI/CD automation, containerization, and cloud deployment, all open-sourced on GitHub</li>
+                    <li>Architected an automated CI/CD pipeline using Azure Pipelines integrated with Azure Container Registry, enabling zero-downtime continuous delivery of web apps to Azure App Service — <span class="rlink"><a href="https://github.com/Ashwani899/Azure-CI-CD-pipeline-from-scratch">GitHub Repo</a></span></li>
+                    <li>Configured Jenkins Remoting infrastructure to distribute build workloads across remote agent nodes, implementing secure node isolation for multi-architecture job execution — <span class="rlink"><a href="https://github.com/Ashwani899/Jenkins-Remoting-Project">GitHub Repo</a></span></li>
+                    <li>Containerized and deployed a production-grade web server using Docker, implementing container health monitoring, lifecycle management, and deployment best practices — <span class="rlink"><a href="https://github.com/Ashwani899/Docker-webserver-project">GitHub Repo</a></span></li>
+                    <li>Automated Java application builds using Gradle with dependency management and CI/CD pipeline integration for streamlined continuous delivery — <span class="rlink"><a href="https://github.com/Ashwani899/Java-Application-using-Gradle-">GitHub Repo</a></span></li>
+                </ul>
+            </div>
+
+            <!-- GFG Campus Mantri -->
+            <div class="exp-item">
+                <div class="exp-hdr">
+                    <span><span class="exp-title">Campus Mantri (Official Representative)</span> <span class="exp-co">| GeeksforGeeks</span></span>
+                    <span class="exp-dt">Jun 2026 – Present</span>
+                </div>
+                <ul class="bl">
+                    <li>Appointed as the Official Campus Representative of GeeksforGeeks at JUIT for a 6-month tenure, serving as the primary point of contact between GFG and 1000+ students</li>
+                    <li>Organizing campus-level coding events, DSA workshops, and technical activities to increase student engagement with GFG's educational platforms and resources</li>
+                </ul>
+            </div>
+
+            <!-- IIT Bombay Techfest -->
+            <div class="exp-item">
+                <div class="exp-hdr">
+                    <span><span class="exp-title">College Ambassador</span> <span class="exp-co">| Techfest, IIT Bombay (Asia's Largest Science &amp; Technology Festival)</span></span>
+                    <span class="exp-dt">Jul 2026 – Present</span>
+                </div>
+                <ul class="bl">
+                    <li>Selected as the official face of Techfest at JUIT, driving student engagement, sparking innovation, and leading peers into the world of tech and creativity</li>
+                    <li>Coordinating event promotions and campus outreach, driving 200+ student registrations while gaining access to certified courses and internship opportunities</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- PROJECTS -->
+        <div class="section">
+            <div class="section-title">Projects</div>
+
+            <div class="proj-item">
+                <div class="proj-hdr">
+                    <span class="proj-name">Techfest-3D — Interactive Cyberpunk Event Website</span>
+                    <span class="proj-lnk"><a href="https://github.com/Ashwani899/Techfest-3D">github.com/Ashwani899/Techfest-3D</a></span>
+                </div>
+                <ul class="bl">
+                    <li>Developed a responsive cyberpunk-themed event website using HTML, CSS, and JavaScript with dynamic animations, parallax scrolling, and interactive UI; deployed via GitHub Pages</li>
+                </ul>
+            </div>
+
+            <div class="proj-item">
+                <div class="proj-hdr">
+                    <span class="proj-name">Techfest-Synthesis — Futuristic Event Platform</span>
+                    <span class="proj-lnk"><a href="https://github.com/Ashwani899/Techfest-Synthesis">github.com/Ashwani899/Techfest-Synthesis</a></span>
+                </div>
+                <ul class="bl">
+                    <li>Built a visually immersive event website with advanced CSS effects, optimized layout rendering, and cross-browser compatibility</li>
+                </ul>
+            </div>
+
+            <div class="proj-item">
+                <div class="proj-hdr">
+                    <span class="proj-name">JPMorgan Chase Software Engineering Simulation</span>
+                    <span class="proj-lnk">Forage</span>
+                </div>
+                <ul class="bl">
+                    <li>Completed enterprise-level software engineering tasks including interface implementation, unit testing, and data processing pipeline optimization</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- TECHNICAL SKILLS -->
+        <div class="section">
+            <div class="section-title">Technical Skills</div>
+            <div class="sk"><strong>Languages:</strong> Java, Python, JavaScript, C/C++, HTML, CSS, SQL</div>
+            <div class="sk"><strong>Frameworks &amp; Tools:</strong> Git, GitHub, Docker, Gradle, Jenkins, REST APIs</div>
+            <div class="sk"><strong>Cloud &amp; DevOps:</strong> Azure Pipelines, Azure App Service, Azure Container Registry, CI/CD, Containerization, YAML Pipelines</div>
+            <div class="sk"><strong>Concepts:</strong> Data Structures &amp; Algorithms, OOP, SDLC, Agile, Responsive Web Design, System Design, Distributed Build Systems</div>
+            <div class="sk"><strong>AI &amp; Data:</strong> Generative AI, Prompt Engineering, Data Analytics, Machine Learning Fundamentals</div>
+        </div>
+
+        <!-- CERTIFICATIONS -->
+        <div class="section">
+            <div class="section-title">Certifications</div>
+            <ul class="certs">
+                <li><strong>Google AI Essentials</strong> — Google (Coursera) &nbsp;|&nbsp; <strong>Set Up App Dev Environment on Google Cloud</strong> — Google Cloud Skill Badge</li>
+                <li><strong>IBM Cybersecurity Fundamentals</strong> &nbsp;|&nbsp; <strong>Getting Started with AI on Jetson Nano</strong> — NVIDIA</li>
+                <li><strong>MongoDB Core Concepts &amp; Architecture</strong> &nbsp;|&nbsp; <strong>Introduction to Data Science</strong> — Cisco</li>
+                <li><strong>Software Engineering Simulation</strong> — JPMorgan Chase &nbsp;|&nbsp; <strong>GenAI Data Analytics Simulation</strong> — Tata Group</li>
+                <li><strong>AI-ML Engineer</strong> — NSDC &amp; Reliance Foundation &nbsp;|&nbsp; <strong>AI Skills Fest 2026</strong> — Microsoft</li>
+            </ul>
+        </div>
+
+    </div>
+</body>
+</html>

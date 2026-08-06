@@ -1,0 +1,64 @@
+ASHWANI SINGHAL
+Hapur, Uttar Pradesh, India | +91 74518 34707 | ashwani.singhal0920@gmail.com
+LinkedIn: linkedin.com/in/ashwani-singhal-7032a0378 | GitHub: github.com/Ashwani899 | LeetCode: leetcode.com/u/n3o8ZRTwiN
+
+================================================================================
+PROFESSIONAL SUMMARY
+================================================================================
+Motivated Computer Science Engineering student at Jaypee University of Information Technology with hands-on experience in software development, DevOps, and cloud computing. Proficient in Java, Python, JavaScript, and C/C++ with demonstrated ability to build and deploy full-stack web applications and end-to-end CI/CD pipelines. Completed a DevOps internship delivering 4 production-grade projects spanning containerization, build automation, and cloud deployment. Passionate about solving complex problems through clean, scalable code.
+
+================================================================================
+EDUCATION
+================================================================================
+Jaypee University of Information Technology (JUIT), Waknaghat, Solan, HP
+B.Tech, Computer Science Engineering | 2025 - 2029 | CGPA: 7.26/10
+Relevant Coursework: Data Structures & Algorithms, Object-Oriented Programming, Database Management Systems, Operating Systems, Computer Networks
+
+================================================================================
+EXPERIENCE
+================================================================================
+DevOps Intern | CodeAlpha | Jun 2026 - Jul 2026
+- Delivered 4 end-to-end DevOps projects encompassing CI/CD automation, containerization, and cloud deployment, all open-sourced on GitHub
+- Architected an automated CI/CD pipeline using Azure Pipelines integrated with Azure Container Registry, enabling zero-downtime continuous delivery of web applications to Azure App Service (github.com/Ashwani899/Azure-CI-CD-pipeline-from-scratch)
+- Configured Jenkins Remoting infrastructure to distribute build workloads across remote agent nodes, implementing secure node isolation for multi-architecture job execution (github.com/Ashwani899/Jenkins-Remoting-Project)
+- Containerized and deployed a production-grade web server using Docker, implementing container health monitoring, lifecycle management, and deployment best practices (github.com/Ashwani899/Docker-webserver-project)
+- Automated Java application builds using Gradle with dependency management and CI/CD pipeline integration for streamlined continuous delivery (github.com/Ashwani899/Java-Application-using-Gradle-)
+
+Core Campus Ambassador | IIT Bombay Techfest 2026-27
+- Led campus outreach at JUIT, coordinating event promotions and driving 200+ student registrations for India's largest science and technology festival
+
+Campus Mantri (Official Representative) | GeeksforGeeks | Jun 2026 - Present
+- Appointed as the Official Campus Representative of GeeksforGeeks at JUIT for a 6-month tenure, serving as the primary point of contact between GFG and 1000+ students
+- Organizing campus-level coding events, DSA workshops, and technical activities to increase student engagement with GFG's educational platforms and resources
+- Acting as brand ambassador promoting competitive programming culture, driving participation in GFG contests and learning initiatives across campus
+
+================================================================================
+PROJECTS
+================================================================================
+Techfest-3D - Interactive Cyberpunk Event Website | github.com/Ashwani899/Techfest-3D
+- Developed a responsive cyberpunk-themed event website using HTML, CSS, and JavaScript with dynamic animations, parallax scrolling, and interactive UI components
+- Implemented mobile-first responsive design deployed via GitHub Pages
+
+Techfest-Synthesis - Futuristic Event Platform | github.com/Ashwani899/Techfest-Synthesis
+- Built a visually immersive event website with advanced CSS effects, optimized layout rendering, and cross-browser compatibility
+
+JPMorgan Chase Software Engineering Simulation | Forage
+- Completed enterprise-level software engineering tasks including interface implementation, unit testing, and data processing pipeline optimization
+
+================================================================================
+TECHNICAL SKILLS
+================================================================================
+Languages: Java, Python, JavaScript, C/C++, HTML, CSS, SQL
+Frameworks & Tools: Git, GitHub, Docker, Gradle, Jenkins, REST APIs
+Cloud & DevOps: Azure Pipelines, Azure App Service, Azure Container Registry, CI/CD, Containerization, YAML Pipeline Configuration
+Concepts: Data Structures & Algorithms, OOP, SDLC, Agile, Responsive Web Design, System Design Fundamentals, Distributed Build Systems
+AI & Data: Generative AI, Prompt Engineering, Data Analytics, ML Fundamentals
+
+================================================================================
+CERTIFICATIONS
+================================================================================
+- Google AI Essentials (Coursera) | Set Up App Dev Environment on Google Cloud (Skill Badge)
+- IBM Cybersecurity Fundamentals | Getting Started with AI on Jetson Nano (NVIDIA)
+- MongoDB Core Concepts & Architecture | Introduction to Data Science (Cisco)
+- Software Engineering Simulation (JPMorgan Chase) | GenAI Data Analytics (Tata Group)
+- AI-ML Engineer (NSDC & Reliance Foundation) | AI Skills Fest 2026 (Microsoft)
