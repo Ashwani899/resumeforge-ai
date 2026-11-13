@@ -1,143 +1,97 @@
-# ResumeForge AI — Full-Stack AI Resume Builder
+# ResumeForge AI — Full-Stack AI Resume Analysis
 
-An intelligent resume analysis and optimization platform built with React + TypeScript + Tailwind CSS (frontend) and Python + FastAPI (backend), powered by OpenAI's GPT for AI-driven suggestions and resume tailoring.
+ResumeForge AI is a full-stack application for uploading a PDF/DOCX résumé, inspecting an explainable ATS-style score and keyword match, receiving AI-assisted suggestions, tailoring content to a job description, and exporting an updated PDF.
 
-![ResumeForge AI](https://img.shields.io/badge/ResumeForge-AI-6366f1?style=for-the-badge)
-![React](https://img.shields.io/badge/React-18-61DAFB?style=flat-square&logo=react)
-![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=flat-square&logo=typescript)
-![FastAPI](https://img.shields.io/badge/FastAPI-0.115-009688?style=flat-square&logo=fastapi)
-![OpenAI](https://img.shields.io/badge/OpenAI-GPT--4o--mini-412991?style=flat-square&logo=openai)
+> **Project status:** Portfolio prototype. Treat scores and generated suggestions as decision-support, not a guarantee of ATS outcomes or hiring results. Review every generated change before using it in an application.
 
 ## Features
 
-- **Resume Upload** — Drag-and-drop PDF/DOCX upload with instant parsing
-- **ATS Score** — Deterministic 10-category scoring engine (0-100) with detailed breakdown
-- **Missing Keywords** — Algorithmic keyword extraction and matching against job descriptions
-- **AI Improvement Suggestions** — GPT-powered actionable resume improvement tips
-- **Internship Tailoring** — AI rewrites your resume to match specific internship postings
-- **Download Improved Resume** — Export tailored resume as PDF
+- PDF and DOCX résumé upload and text extraction
+- Deterministic multi-category scoring and job-description keyword comparison
+- Optional OpenAI-powered improvement suggestions and tailoring
+- PDF export of tailored résumé content
+- Async persistence with SQLAlchemy and SQLite
+- React/TypeScript frontend and FastAPI backend
 
-## Tech Stack
+## Stack
 
-| Layer | Technology |
+| Layer | Technologies |
 |---|---|
-| Frontend | React 18 + TypeScript + Vite |
-| Styling | Tailwind CSS v4 |
-| Backend | Python 3.11+ + FastAPI |
-| AI | OpenAI API (GPT-4o-mini) |
-| Database | SQLite (via SQLAlchemy async) |
-| PDF Parsing | PyMuPDF |
-| PDF Generation | FPDF2 |
+| Frontend | React, TypeScript, Vite, Tailwind CSS |
+| API | Python, FastAPI, Uvicorn |
+| AI | OpenAI API (optional for non-AI analysis paths) |
+| Data | SQLAlchemy async, aiosqlite |
+| Documents | PyMuPDF, python-docx, FPDF2 |
 
-## Getting Started
+## Run locally
 
-### Prerequisites
+Requirements: Python 3.11+ (see deployment/runtime config), Node.js and npm.
 
-- Node.js 18+ and npm
-- Python 3.11+
-- OpenAI API key (optional — ATS scoring and keywords work without it)
-
-### Backend Setup
+### Backend
 
 ```bash
 cd backend
-
-# Create virtual environment
-python -m venv venv
-
-# Activate (Windows)
-venv\Scripts\activate
-# Activate (macOS/Linux)
-source venv/bin/activate
-
-# Install dependencies
+python -m venv .venv
+# Windows: .venv\Scripts\activate
+# macOS/Linux: source .venv/bin/activate
 pip install -r requirements.txt
-
-# Create .env file
 cp .env.example .env
-# Edit .env and add your OPENAI_API_KEY
-
-# Run the server
+# Add your own API key only if using AI-powered features.
 uvicorn app.main:app --reload --port 8000
 ```
 
-### Frontend Setup
+### Frontend
 
 ```bash
 cd frontend
-
-# Install dependencies
-npm install
-
-# Run dev server
+npm ci
 npm run dev
 ```
 
-The frontend runs on `http://localhost:5173` and proxies API calls to the backend at `http://localhost:8000`.
+The Vite development server runs at `http://localhost:5173`. The API health route is `GET /api/health` on port 8000. Review the Vite configuration for API proxy/base URL behavior before deployment.
 
-### Environment Variables
+## Environment
 
-Create `backend/.env` with:
+Backend `.env`:
 
 ```env
-OPENAI_API_KEY=sk-your-key-here     # Required for AI features
+OPENAI_API_KEY=
 DATABASE_URL=sqlite+aiosqlite:///./resumeforge.db
 FRONTEND_URL=http://localhost:5173
 ```
 
-## Project Structure
+Never commit a real API key, uploaded résumé, database file, or production credential. Use environment variables in the hosting platform.
 
-```
-├── frontend/                  # React + TypeScript + Tailwind
-│   ├── src/
-│   │   ├── components/        # Reusable UI components
-│   │   ├── pages/             # Route pages
-│   │   ├── services/          # API client
-│   │   └── types/             # TypeScript interfaces
-│   └── ...
-│
-├── backend/                   # Python + FastAPI
-│   ├── app/
-│   │   ├── routes/            # API endpoints
-│   │   ├── services/          # Business logic
-│   │   ├── main.py            # FastAPI app
-│   │   ├── database.py        # SQLAlchemy setup
-│   │   └── models.py          # Pydantic models
-│   └── requirements.txt
-│
-└── README.md
+## Repository layout
+
+```text
+frontend/   React + TypeScript application
+backend/
+  app/
+    routes/     API endpoints
+    services/   document and AI business logic
+    main.py     FastAPI application
+    database.py async database setup
+    models.py   data models
+  requirements.txt
+README.md
 ```
 
-## API Endpoints
+## API surface
 
-| Method | Endpoint | Description |
-|---|---|---|
-| POST | `/api/upload` | Upload resume (PDF/DOCX) |
-| GET | `/api/analysis/{id}` | Get full analysis results |
-| POST | `/api/analysis/{id}/suggestions` | Generate AI suggestions |
-| POST | `/api/tailor` | Tailor resume for a job |
-| GET | `/api/download/{id}` | Download improved resume PDF |
-| GET | `/api/health` | Health check |
+The backend registers upload, analysis, tailoring, and download routers under `/api`, plus `GET /api/health`. Consult the route modules for the current request/response schemas; those are the source of truth if this overview becomes outdated.
 
-## Deployment
+## Deployment notes
 
-### Frontend (Vercel)
+The repository includes a Render backend blueprint and a Vercel frontend configuration. Configure `OPENAI_API_KEY` and the exact deployed frontend origin in the hosting environment. The backend CORS allow-list should contain only trusted origins; do not use wildcard origins with credentialed requests.
 
-```bash
-cd frontend
-npm run build
-# Deploy dist/ to Vercel
-```
+## Responsible use and limitations
 
-Set environment variable: `VITE_API_URL=https://your-backend.onrender.com`
-
-### Backend (Render)
-
-1. Connect your GitHub repo
-2. Set build command: `pip install -r requirements.txt`
-3. Set start command: `uvicorn app.main:app --host 0.0.0.0 --port $PORT`
-4. Add environment variables (OPENAI_API_KEY, FRONTEND_URL)
+- A heuristic score is not the same as any employer's proprietary ATS ranking.
+- Generated content can introduce inaccuracies. Verify every date, metric, skill, and claim.
+- Résumés contain personal data. Avoid uploading sensitive documents to untrusted deployments and define retention/deletion behavior before public launch.
+- This README does not claim a successful production deployment or a validated hiring-performance improvement.
 
 ## License
 
-MIT
+MIT (see repository license file).
