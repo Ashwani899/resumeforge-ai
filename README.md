@@ -94,4 +94,4 @@ The repository includes a Render backend blueprint and a Vercel frontend configu
 
 ## License
 
-MIT (see repository license file).
+No license file is currently included. Do not assume reuse or redistribution rights until a license is explicitly added.
