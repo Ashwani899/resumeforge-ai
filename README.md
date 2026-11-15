@@ -73,13 +73,19 @@ backend/
     main.py     FastAPI application
     database.py async database setup
     models.py   data models
+  tests/        parser and ATS-scoring regression tests
   requirements.txt
+.github/workflows/ci.yml
 README.md
 ```
 
 ## API surface
 
 The backend registers upload, analysis, tailoring, and download routers under `/api`, plus `GET /api/health`. Consult the route modules for the current request/response schemas; those are the source of truth if this overview becomes outdated.
+
+## Tests and continuous integration
+
+Run the backend regression suite from `backend/` with `python -m pytest -q`. GitHub Actions runs the backend pytest suite and installs/builds the frontend with `npm ci` and `npm run build` on pushes and pull requests to `main`. These checks do not exercise live OpenAI requests, production hosting, or a multi-user deployment.
 
 ## Deployment notes
 
@@ -94,4 +100,4 @@ The repository includes a Render backend blueprint and a Vercel frontend configu
 
 ## License
 
-MIT (see repository license file).
+No license file is currently included. Do not assume reuse or redistribution rights until a license is explicitly added.
